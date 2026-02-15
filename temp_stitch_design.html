@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hero Section Glass Card V1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20df2",
+                        "background-light": "#f8f5f8",
+                        "background-dark": "#0a050a", // Deep midnight base
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            overflow: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        .glow-cyan {
+            filter: blur(80px);
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(6, 182, 212, 0) 70%);
+        }
+        .glow-primary {
+            filter: blur(80px);
+            background: radial-gradient(circle, rgba(242, 13, 242, 0.35) 0%, rgba(242, 13, 242, 0) 70%);
+        }
+        .ios-notch {
+            height: 44px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased font-display">
+<!-- Mobile Frame Simulation -->
+<div class="relative h-screen w-full flex flex-col overflow-hidden max-w-[430px] mx-auto bg-background-dark border-x border-primary/10 shadow-2xl">
+<!-- Background Gradients -->
+<div class="absolute inset-0 z-0">
+<div class="absolute top-[-10%] left-[-20%] w-[100%] h-[50%] glow-cyan opacity-60"></div>
+<div class="absolute bottom-[-10%] right-[-20%] w-[100%] h-[60%] glow-primary opacity-50"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_transparent_0%,_#0a050a_90%)]"></div>
+</div>
+<!-- iOS Status Bar -->
+<div class="ios-notch relative z-20 flex items-center justify-between px-8 pt-4">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-icons text-xs">signal_cellular_alt</span>
+<span class="material-icons text-xs">wifi</span>
+<span class="material-icons text-xs rotate-90">battery_full</span>
+</div>
+</div>
+<!-- Header Nav -->
+<header class="relative z-20 px-6 py-4 flex items-center justify-between">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-icons text-primary">auto_awesome</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-white/70">
+<span class="material-icons">menu</span>
+</button>
+</header>
+<!-- Main Hero Content -->
+<main class="relative z-10 flex-1 flex flex-col justify-center px-6 pb-20">
+<!-- Hero Card Wrapper -->
+<div class="glass-card rounded-2xl p-8 shadow-2xl space-y-8 relative overflow-hidden group">
+<!-- Subtle internal light streak -->
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+<div class="space-y-4">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/30 text-[10px] uppercase tracking-widest font-bold text-primary">
+                        Next Generation
+                    </span>
+<h1 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-white">
+                        Experience <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary/80">the Future</span>
+</h1>
+<p class="text-white/60 text-sm leading-relaxed max-w-[240px]">
+                        Step into a new dimension of digital interaction with immersive glass interfaces.
+                    </p>
+</div>
+<!-- Search Bar -->
+<div class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-icons text-sm text-white/40">search</span>
+</div>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search the future..." type="text"/>
+</div>
+<!-- CTA Button -->
+<div class="pt-2">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-[0_0_20px_rgba(242,13,242,0.4)] transition-all flex items-center justify-center space-x-2 active:scale-[0.98]">
+<span>Get Started</span>
+<span class="material-icons text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Visual Asset (Optional hint of product) -->
+<div class="mt-12 flex justify-center opacity-40">
+<div class="w-32 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-full"></div>
+</div>
+</main>
+<!-- Footer / Pagination -->
+<footer class="relative z-20 px-6 py-10 flex flex-col items-center space-y-4">
+<div class="flex space-x-2">
+<div class="w-8 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+</div>
+<div class="flex items-center space-x-2 text-white/40 text-[10px] uppercase tracking-[0.2em]">
+<span class="material-icons text-sm">expand_more</span>
+<span>Scroll to explore</span>
+</div>
+</footer>
+<!-- iOS Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-white/20 rounded-full z-20"></div>
+<!-- Decorative Floating Elements -->
+<div class="absolute top-[15%] right-[-10%] w-24 h-24 rounded-full glass-card border-white/5 z-0"></div>
+<div class="absolute bottom-[20%] left-[-15%] w-40 h-40 rounded-full glass-card border-white/5 z-0"></div>
+</div>
+</body></html>

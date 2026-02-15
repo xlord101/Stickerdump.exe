@@ -1,0 +1,101 @@
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    z-index: 0;
+}
+
+.blob-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: drift 20s infinite alternate ease-in-out;
+}
+
+/* Blob 1: Purple */
+.blob-1 {
+    width: 60vw;
+    height: 60vw;
+    top: -20%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(128, 81, 255, 0.8) 0%, rgba(128, 81, 255, 0) 70%);
+    animation-duration: 25s;
+    animation-direction: alternate-reverse;
+}
+
+/* Blob 2: Cyan */
+.blob-2 {
+    width: 50vw;
+    height: 50vw;
+    bottom: -10%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.8) 0%, rgba(6, 182, 212, 0) 70%);
+    animation-duration: 30s;
+}
+
+/* Blob 3: Pink/Magenta */
+/* Side Stage often uses subtle pinks */
+.blob-3 {
+    width: 40vw;
+    height: 40vw;
+    top: 40%;
+    left: 30%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0) 70%);
+    animation: float 18s infinite ease-in-out;
+}
+
+/* Blob 4: Deep Blue center/fill */
+.blob-4 {
+    width: 80vw;
+    height: 80vw;
+    top: 10%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.4) 0%, rgba(14, 165, 233, 0) 70%);
+    animation-duration: 40s;
+    opacity: 0.3;
+}
+
+
+@keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -50px) scale(1.1); }
+    66% { transform: translate(-30px, 20px) scale(0.9); }
+    100% { transform: translate(20px, 60px) scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(100px, 100px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Noise overlay for texture (optional) */
+.noise-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Glassmorphism utility for use in App */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
