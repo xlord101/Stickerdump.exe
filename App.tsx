@@ -239,7 +239,7 @@ const App: React.FC = () => {
             <div className="col-span-2 md:col-span-1">
               <h4 className="font-black uppercase mb-6 text-[#8051FF]">Newsletter</h4>
               <div className="flex border-b-2 border-white/20 focus-within:border-[#8051FF] transition-all">
-                <input type="text" placeholder="YOUR EMAIL" className="bg-transparent py-2 w-full font-black uppercase text-xs focus:outline-none" />
+                <input type="text" placeholder="YOUR EMAIL" className="bg-transparent py-2 w-full font-black uppercase text-xs focus:outline-none text-white placeholder-white/50" />
                 <button className="text-2xl">→</button>
               </div>
             </div>
