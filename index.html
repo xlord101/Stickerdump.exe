@@ -1,76 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StickerDump.exe | Bring Your Vibe to Life</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        background-color: #000000;
-        color: #ffffff;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        overflow-x: hidden;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StickerDump.exe | Bring Your Vibe to Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+    }
+
+    .font-body {
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    }
+
+    .mesh-gradient {
+      background-color: #000000;
+      background-image:
+        radial-gradient(at 0% 0%, hsla(253, 100%, 66%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 100%, 50%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 100%, 55%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 50%, hsla(160, 100%, 50%, 1) 0, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(263, 100%, 66%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(292, 100%, 50%, 1) 0, transparent 50%);
+      background-size: 200% 200%;
+      animation: mesh-move 15s ease infinite;
+    }
+
+    @keyframes mesh-move {
+      0% {
+        background-position: 0% 0%;
       }
-      h1, h2, h3 {
-        font-family: 'Inter', sans-serif;
+
+      50% {
+        background-position: 100% 100%;
       }
-      .font-display {
-        font-family: 'Inter', sans-serif;
-        font-weight: 900;
-      }
-      .font-body {
-        font-family: 'Helvetica Neue', Helvetica, sans-serif;
-      }
-      .mesh-gradient {
-        background-color: #000000;
-        background-image: 
-          radial-gradient(at 0% 0%, hsla(253,100%,66%,1) 0, transparent 50%), 
-          radial-gradient(at 50% 0%, hsla(225,100%,50%,1) 0, transparent 50%), 
-          radial-gradient(at 100% 0%, hsla(339,100%,55%,1) 0, transparent 50%), 
-          radial-gradient(at 50% 50%, hsla(160,100%,50%,1) 0, transparent 50%),
-          radial-gradient(at 0% 100%, hsla(263,100%,66%,1) 0, transparent 50%), 
-          radial-gradient(at 100% 100%, hsla(292,100%,50%,1) 0, transparent 50%);
-        background-size: 200% 200%;
-        animation: mesh-move 15s ease infinite;
-      }
-      @keyframes mesh-move {
-        0% { background-position: 0% 0%; }
-        50% { background-position: 100% 100%; }
-        100% { background-position: 0% 0%; }
-      }
-      .sticker-shadow {
-        filter: drop-shadow(8px 8px 0px rgba(0,0,0,0.3));
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #000;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #8051FF;
-      }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@^19.2.4",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-        "react/": "https://esm.sh/react@^19.2.4/"
+
+      100% {
+        background-position: 0% 0%;
       }
     }
-    </script>
-  <link rel="stylesheet" href="/index.css">
+
+    .sticker-shadow {
+      filter: drop-shadow(8px 8px 0px rgba(0, 0, 0, 0.3));
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #8051FF;
+    }
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="index.tsx"></script>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
